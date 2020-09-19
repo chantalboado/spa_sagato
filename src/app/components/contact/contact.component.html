@@ -1,0 +1,97 @@
+
+    <section class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="mb-0">Contacto</h2>
+          <ol>
+            <li><a href="index.html">Inicio</a></li>
+            <li>Contacto</li>
+          </ol>
+        </div>
+        
+      </div>
+    </section>
+    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-6">
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="info-box">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <h3>Dirección</h3>
+                <p> Camargo 1021<br>Buenos Aires,<br>CABA, La Union</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-box">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <h3>Escribinos</h3>
+                <p>Fertilizante.sagato@gmail.com</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-box">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <h3>LLamanos</h3>
+                <p>+54 9 2234 06-0967</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+          <form (ngSubmit)="contactForm(form)" #form="ngForm" class="php-email-form">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Nombre</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  name="nombre"
+                  [class.is-invalid]="form.submitted && nombre.invalid" 
+                  (ngModel)="nombre"
+                  #nombre='ngModel' 
+                  required>
+              </div>
+              <div class="form-group col-md-6">
+                <label>Asunto</label>
+                <input type="text" class="form-control" name="asunto" ngModel>
+              </div>
+              <div class="form-group col-md">
+                <label>E-mail</label>
+                <input
+                  type="email" 
+                  class="form-control"
+                  name="email"
+                  required
+                  [class.is-invalid]="form.submitted && email.invalid" 
+                  (ngModel)="nombre"
+                  #email='ngModel'
+                  email>
+              </div>
+            </div>
+
+              <div class="form-group">
+                <label>Mensaje</label>
+                <textarea 
+                  class="form-control"
+                  cols="30" 
+                  rows="6"
+                  name="mensaje"
+                  [class.is-invalid]="form.submitted && mensaje.invalid" 
+                  (ngModel)="mensaje"
+                  #mensaje='ngModel'
+                  required>
+                </textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Contact Section -->
