@@ -3,8 +3,8 @@ module.exports = (formulario) => {
  var transporter = nodemailer.createTransport({
  service: 'gmail',
     auth: {
-      user: 'Fertilizante.sagato@gmail.com', // Cambialo por tu email
-      pass: '155387390' // Cambialo por tu password
+      user: process.env.USER_EMAIL,
+      pass: process.env.USER_PASS
     }
  });
 const mailOptions = {
