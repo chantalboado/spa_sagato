@@ -3,9 +3,11 @@ module.exports = (formulario) => {
  var transporter = nodemailer.createTransport({
  service: 'gmail',
     auth: {
+      type: 'OAuth2',
       user: process.env.USER_EMAIL,
-      pass: process.env.USER_PASS
+      accessToken: process.env.TOKEN
     }
+    
  });
 const mailOptions = {
  from: `”${formulario.nombre} 👻” <${formulario.email}>`,
